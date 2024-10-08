@@ -67,14 +67,46 @@ function saveToDb(data) {
 
 // promise chaning
 // db ma data save ho jaye tu then call kro and so on. failure ka case ma catch chala ga
+
 saveToDBPromise("apnacollege")
-  .then(() => {
+  .then((res) => {
+    console.log("result", result);
     console.log("promise1 resolved");
     return saveToDBPromise("hello world");
   })
-  .then(() => {
-    console.log("promise2 resolved");
+  .then((res) => {
+    console.log("promise2 resolved", res);
   })
-  .catch(() => {
-    console.log("some promise rejected");
+  .catch((err) => {
+    console.log("some promise rejected", err);
+  });
+
+// refactor callback hell with promises
+function saveToDb(data) {
+  return new Promise((resolve, reject) => {
+    const internetSpeed = Math.floor(Math.random() * 10) + 1;
+    if (internetSpeed > 4) {
+      console.log(`data saved to db: ${data}`);
+      resolve();
+    } else {
+      console.log(`Data not saved. Internet speed is not stable.`);
+      reject();
+    }
+  });
+}
+
+saveToDb("apna school")
+  .then(() => {
+    console.log("success1: data1 saved");
+    return saveToDb("smit");
+  })
+  .then(() => {
+    console.log("success2: data2 saved");
+    return saveToDb("apna college");
+  })
+  .then(() => {
+    console.log("success3: data3 saved");
+  })
+  .catch((error) => {
+    console.log("failure: data not saved due to weak connection");
   });
