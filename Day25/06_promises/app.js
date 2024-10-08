@@ -54,13 +54,27 @@ function saveToDb(data) {
 
 // saveToDb("Osama");
 
-let req = saveToDb("Osama"); // req is a promise obj
+// let req = saveToDb("Osama"); // req is a promise obj
 
-req
+// req
+//   .then(() => {
+//     console.log("resolved");
+//   })
+//   .catch(() => {
+//     console.log("rejected");
+//   });
+// console.log(req);
+
+// promise chaning
+// db ma data save ho jaye tu then call kro and so on. failure ka case ma catch chala ga
+saveToDBPromise("apnacollege")
   .then(() => {
-    console.log("resolved");
+    console.log("promise1 resolved");
+    return saveToDBPromise("hello world");
+  })
+  .then(() => {
+    console.log("promise2 resolved");
   })
   .catch(() => {
-    console.log("rejected");
+    console.log("some promise rejected");
   });
-console.log(req);
