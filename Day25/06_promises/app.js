@@ -53,3 +53,14 @@ function saveToDb(data) {
 }
 
 // saveToDb("Osama");
+
+let req = saveToDb("Osama"); // req is a promise obj
+
+req
+  .then(() => {
+    console.log("resolved");
+  })
+  .catch(() => {
+    console.log("rejected");
+  });
+console.log(req);
