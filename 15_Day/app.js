@@ -1,12 +1,25 @@
-let name = null;
+// Comparsion operator
 
-console.log(typeof name); //object
+console.log(
+  "== compare only value and it perform type coercion try to convert one or both operand to the same type before comparision"
+);
 
-let age;
-console.log(typeof age); // undefined
+console.log(123 == "123"); // true
+console.log(" " == 0); // true
+console.log(null == undefined); // true
+console.log(NaN == NaN); // false NaN is a special No not equal to any number
 
-console.log(typeof NaN); // number
+console.log("=== compare both value and type not perform implicit coercion");
 
-// post increment first use than change
-console.log(age++); // NaN
-console.log(age); // NaN
+console.log(0 === false); // false
+console.log(null === undefined); // false
+
+// conditional Statments
+console.log("If statement");
+
+if (" ") console.log("true");
+
+// logs
+
+console.error("Error");
+console.warn("Warning");
