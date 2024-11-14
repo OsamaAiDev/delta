@@ -37,32 +37,59 @@
 
 // todo app
 
-let todos = [];
-let req = prompt("please enter your request!").toLowerCase();
+// let todos = [];
+// let req = prompt("please enter your request!").toLowerCase();
 
-while (true) {
-  if (req == "add") {
-    let item = prompt("Enter task");
-    todos.push(item);
-    console.log(`${item} added successfuly`);
-  } else if (req == "quit") {
-    console.log("quitting app");
-    break;
-  } else if (req == "list") {
-    for (let todo of todos) {
-      console.log(todo);
-    }
-  } else if (req == "delete") {
-    let itemToDelete = prompt("Enter task that you want to delete");
-    if (todos.includes(itemToDelete)) {
-      let index = todos.indexOf(itemToDelete);
-      let deletedItem = todos.splice(index, 1);
-      console.log(`Your todo ${deletedItem} deleted successfully`);
-    } else {
-      console.error("Todo not found try again!");
-    }
-  } else {
-    req = prompt("Invalid Request! Enter values from the list").toLowerCase();
-  }
-  req = prompt("please enter your request!").toLowerCase();
-}
+// while (true) {
+//   if (req == "add") {
+//     let item = prompt("Enter task");
+//     todos.push(item);
+//     console.log(`${item} added successfuly`);
+//   } else if (req == "quit") {
+//     console.log("quitting app");
+//     break;
+//   } else if (req == "list") {
+//     for (let todo of todos) {
+//       console.log(todo);
+//     }
+//   } else if (req == "delete") {
+//     let itemToDelete = prompt("Enter task that you want to delete");
+//     if (todos.includes(itemToDelete)) {
+//       let index = todos.indexOf(itemToDelete);
+//       let deletedItem = todos.splice(index, 1);
+//       console.log(`Your todo ${deletedItem} deleted successfully`);
+//     } else {
+//       console.error("Todo not found try again!");
+//     }
+//   } else {
+//     req = prompt("Invalid Request! Enter values from the list").toLowerCase();
+//   }
+//   req = prompt("please enter your request!").toLowerCase();
+// }
+
+// Objects
+
+const student = {
+  name: "osama",
+  age: 27,
+};
+
+// accessing props usig . and [] notation
+// if prop not found we get undefined
+// console.log(student["name"]);
+
+// deleting property
+// if prop found del and return true
+// delete student;
+
+// console.log(student);
+
+// Math obj
+
+// console.log(Math.abs(-2)); // return absolute val remove +- signs
+// console.log(Math.pow(2, 3)); // power
+// console.log(Math.floor(2.6)); // round of to < or equal value 2 result
+// console.log(Math.floor(-2.1)); // round of to < or equal value -3 result
+// console.log(Math.ceil(2.1)); // round of to > integer
+// console.log(Math.ceil(-2.6)); // round of to > integer
+console.log(Math.floor(Math.random() * 10)) + 1;
