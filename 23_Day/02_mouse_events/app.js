@@ -7,17 +7,20 @@
 //   console.log("button was clicked");
 // };
 
-function sayHello() {
-  alert("Hello");
-}
+// function sayHello() {
+//   alert("Hello");
+// }
 
-// btn.onclick = sayHello;
+// // btn.onclick = sayHello;
 
-let btns = document.querySelectorAll("button");
-for (let btn of btns) {
-  btn.onclick = sayHello;
-  btn.onmouseenter = function () {
-    console.log("You enter the btn");
-  };
-  console.dir(btn);
-}
+// let btns = document.querySelectorAll("button");
+// for (let btn of btns) {
+//   btn.onclick = sayHello;
+//   btn.onmouseenter = function () {
+//     console.log("You enter the btn");
+//   };
+//   console.dir(btn);
+// }
+
+let btn = document.querySelector("button");
+// btn.onclick = console.log("HELLO"); // accept func only log hello directly not on btn click
